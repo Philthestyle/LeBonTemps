@@ -1,0 +1,6 @@
+framework module Pods_LeBonTemps {
+  umbrella header "Pods-LeBonTemps-umbrella.h"
+
+  export *
+  module * { export * }
+}
