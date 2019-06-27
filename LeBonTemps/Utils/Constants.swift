@@ -8,7 +8,6 @@
 
 import Foundation
 import CocoaLumberjack
-import KeychainAccess
 
 class Constants {
     
@@ -19,20 +18,6 @@ class Constants {
         return Bundle.main.bundleIdentifier ?? "me.faustin.\(String(describing: UIDevice.current.identifierForVendor?.uuidString))"
     }
 
-    static var apiServerURL = "https://www.infoclimat.fr/public-api/gfs/json?_ll=48.85341,2.3488&_auth=ABpfSFIsBiRWewQzAnQDKgVtBzJeKFRzUS0GZQpvVCkFblU0D29dO1Q6A34PIFVjWHVQMwE6ADABalAoWykCYwBqXzNSOQZhVjkEYQItAygFKwdmXn5Uc1E7BmMKeVQ2BW5VNQ9yXT5UOwNlDyFVYFhjUDUBIQAnAWNQMlswAmAAZV86UjEGbFYxBG4CLQMoBTMHM15gVGhRNgYwCm9UPwVhVTYPbV1qVGoDZw8hVWhYaFA4ATcAOQFgUDdbMAJ%2BAHxfQlJCBnlWeQQkAmcDcQUrBzJeP1Q4&_c=cea1844ab375c1d77e932f70d92b095e"
+    static var apiServerURL = "https://www.infoclimat.fr/public-api/gfs/json?_auth=BR9QRw5wByUFKAE2AHYGL1E5BTAKfFJ1BHgHZA5rVisIY1IzBmZQNlE%2FBHlSfQcxUn8PbAkyUmIKYQF5WykEZQVvUDwOZQdgBWoBZAAvBi1RfwVkCipSdQRuB2AOfVY8CGtSKAZkUDRRNwR4UmMHMlJnD3AJKVJrCmwBYFs3BGQFb1A9DmsHYAVsAXwALwY3UTYFZAo0UmsEZgdmDmtWYAg4UjEGN1A0UTgEeFJjBzFSZg9oCTRSbApsAW9bKQR4BR9QRw5wByUFKAE2AHYGL1E3BTsKYQ%3D%3D&_c=5897ab4ab6215bbe69990428b09e870b"
     
-    
-    // MARK: - Getter & Setter methods
-    // **************************************************************
-    
-    
-    // MARK: - Public methods
-    // **************************************************************
-    
-    // MARK: - Keychain behavior
-    // **************************************************************
-    
-
-    // MARK: - Private methods
-    // **************************************************************
 }

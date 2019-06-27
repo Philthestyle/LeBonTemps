@@ -11,6 +11,7 @@
 		3715C8C522C4A869008127BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C422C4A869008127BC /* HomeViewController.swift */; };
 		3715C8C722C4AC03008127BC /* NetworkDataCachingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C622C4AC03008127BC /* NetworkDataCachingPlugin.swift */; };
 		3715C8C922C4AD3E008127BC /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C822C4AD3E008127BC /* WeatherTableViewCell.swift */; };
+		3715C8CB22C4DABA008127BC /* APIDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8CA22C4DABA008127BC /* APIDataTests.swift */; };
 		372CB88722C4789700118679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372CB88622C4789700118679 /* AppDelegate.swift */; };
 		372CB88922C4789700118679 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372CB88822C4789700118679 /* ViewController.swift */; };
 		372CB88C22C4789700118679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372CB88A22C4789700118679 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		3715C8C422C4A869008127BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3715C8C622C4AC03008127BC /* NetworkDataCachingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataCachingPlugin.swift; sourceTree = "<group>"; };
 		3715C8C822C4AD3E008127BC /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		3715C8CA22C4DABA008127BC /* APIDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataTests.swift; sourceTree = "<group>"; };
 		372CB88322C4789700118679 /* LeBonTemps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBonTemps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372CB88622C4789700118679 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		372CB88822C4789700118679 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				372CB89D22C4789900118679 /* Info.plist */,
 				379CAD1922C48B100066B502 /* APINetworkTests.swift */,
 				379CAD2F22C49F650066B502 /* WeatherTests.swift */,
+				3715C8CA22C4DABA008127BC /* APIDataTests.swift */,
 			);
 			path = LeBonTempsTests;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3715C8CB22C4DABA008127BC /* APIDataTests.swift in Sources */,
 				372CB89C22C4789900118679 /* LeBonTempsTests.swift in Sources */,
 				379CAD1A22C48B100066B502 /* APINetworkTests.swift in Sources */,
 				379CAD3022C49F650066B502 /* WeatherTests.swift in Sources */,
