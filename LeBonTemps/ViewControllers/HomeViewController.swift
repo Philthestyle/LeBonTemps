@@ -56,23 +56,17 @@ class HomeViewController: UIViewController {
         _userInformations = User()
         _determineMyCurrentLocation()
         
-        
-        
-        
     }
+    
     
     
     // MARK: - Init behaviors
     // **************************************************************
     
-    
-    
-    
     // Set 'statusBarStyle' to '.light' appearance
     // ***************************
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         
         // Custom UI && Design
         initTableViewDesign()
@@ -80,8 +74,6 @@ class HomeViewController: UIViewController {
         // NavigationBar custom design
         self.setNeedsStatusBarAppearanceUpdate()
         self.initDesignViewController()
-        
-        
     }
     
     // set preferredStatusBarStyle to .lightContent style
@@ -138,10 +130,6 @@ class HomeViewController: UIViewController {
                     
                     // B) 3. save user's weathers's list with a json file locally into device
                     self.saveToJsonFile(weathersArray: sortedWeathers)
-                    
-                    // B) 4. retrieve json file from device and update weathersTableView with its data
-//                    self.retrieveFromJsonFile()
-                    
                 } catch let error {
                     print("error: \(error)")
                 }
@@ -349,19 +337,7 @@ class HomeViewController: UIViewController {
             self.retrieveFromJsonFile()
         } else {
             print("Network error. Please check your Internet connection")
-            
-            
         }
-//        // check if file ('Weathers.json' exists locally into user's device)
-//        if fileExist(path: "Weathers.json") {
-//            print("File exists !!! :)")
-//            // retieve json and update '_userInformations.weathers'
-//            self.retrieveFromJsonFile()
-//        } else {
-//            print("Network error. Please check your Internet connection")
-//            // user has no json file saved locally into his device
-//            print("Weathers.json doesn't exists into device")
-//        }
     }
     
     
@@ -375,6 +351,30 @@ class HomeViewController: UIViewController {
     
     // get data from API if user has wifi or cellular network available
     // ****************************
+    private func showAlertViewNetworkErrorPMAlert() {
+        let alertVC = PMAlertController(title: "NETWORK ERROR \n\nTrue or False", description: "Did you know...Space probe 'Voyager 1' distance from Earth is about 21.7 billion km ?", image: UIImage(named: "voyager-1-networkError.jpg"), style: .alert)
+        
+        alertVC.gravityDismissAnimation = true
+        alertVC.alertMaskBackground.image = UIImage(named: "PMAlertViewImageBG.jpeg")
+        
+
+        alertVC.alertView.backgroundColor = .black
+        alertVC.alertImage.backgroundColor = .black
+        alertVC.alertImage.tintColor = .clear
+        alertVC.alertDescription.font = UIFont(name: "System-Medium", size: CGFloat(24))
+        alertVC.alertTitle.font = UIFont(name: "System-Bold", size: CGFloat(28))
+    
+        alertVC.addAction(PMAlertAction(title: "True", style: .default, action: { () in
+            print("I didn't know :)")
+        }))
+        alertVC.addAction(PMAlertAction(title: "False", style: .default, action: { () in
+            print("I already knew that !")
+        }))
+        
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    
     private func showAlertViewNetworkError() {
         let alertController = UIAlertController(title: "Network error", message:
             "Please check your Internet connection and refresh.", preferredStyle: .alert)
@@ -424,7 +424,8 @@ extension HomeViewController: CLLocationManagerDelegate {
             // user has NO access to the Internet at all
             if self._userInformations.weathers.isEmpty {
                 // make user aware of the fact that he is using the app ini 'offline mode'
-                showAlertViewOfflineMode()
+//                showAlertViewOfflineMode()
+                showAlertViewNetworkErrorPMAlert()
                 
                 // trying to get offline json data (if already exists - if NOT --> 'showAlertViewNetworkError()'...)
                 getDataOfflineMode(fileNameWithExtension: _offlineJsonFileName)
@@ -434,7 +435,8 @@ extension HomeViewController: CLLocationManagerDelegate {
                 
             } else {
                 // user has NO Internet access && json file Weathers.json'
-                showAlertViewNetworkError()
+//                showAlertViewNetworkError()
+                showAlertViewNetworkErrorPMAlert()
                 
                 // update 'HomeViewController' 'title' to inform user that he has no Internet access
                 self.title = "Network unavailable"
@@ -449,6 +451,7 @@ extension HomeViewController: CLLocationManagerDelegate {
         DDLogError("CLLocation error \(error)")
     }
 }
+
 
 // Mark: - Manage tableView's delegate
 // *************************************************************

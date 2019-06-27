@@ -55,8 +55,6 @@ class User: AbstractModel {
         } catch {
             fatalError("Error! When you want to decode your model: \(AbstractModel.modelName)")
         }
-
-
     }
 
 
