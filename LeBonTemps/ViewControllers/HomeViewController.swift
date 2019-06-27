@@ -231,5 +231,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 70
     }
     
-    // TO DO: --> cell selection action ('data' && 'navigation' management prepared for the destination controller) -> 'WeatherDetailsViewController'
+    //cell selection action ('data' && 'navigation' management prepared for the destination controller) -> 'WeatherDetailsViewController'
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "weatherDetailsVC") as? WeatherDetailsViewController else {
+            DDLogError("Can't find 'WeatherDetailsViewController'")
+            return
+        }
+        
+        let currentWeatherItem = _userInformations.weathers[indexPath.row]
+        detailVC.data = currentWeatherItem
+        
+        self.navigationController?.present(detailVC, animated: true, completion: nil)
+    }
 }
