@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		263FA678A52D781D2B94CB6C /* Pods_LeBonTempsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85DE432B94F051DEF140B3B /* Pods_LeBonTempsTests.framework */; };
+		3714DAC622C5848300F666F7 /* temperatureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3714DAC522C5848300F666F7 /* temperatureIcon.png */; };
 		3715C8C522C4A869008127BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C422C4A869008127BC /* HomeViewController.swift */; };
 		3715C8C722C4AC03008127BC /* NetworkDataCachingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C622C4AC03008127BC /* NetworkDataCachingPlugin.swift */; };
 		3715C8C922C4AD3E008127BC /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C822C4AD3E008127BC /* WeatherTableViewCell.swift */; };
@@ -27,7 +28,6 @@
 		379CAD2622C496280066B502 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2522C496280066B502 /* User.swift */; };
 		379CAD2822C496400066B502 /* AbstractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2722C496400066B502 /* AbstractModel.swift */; };
 		379CAD2A22C49B620066B502 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2922C49B620066B502 /* Weather.swift */; };
-		379CAD2C22C49D2B0066B502 /* WeathersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2B22C49D2B0066B502 /* WeathersManager.swift */; };
 		379CAD3022C49F650066B502 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2F22C49F650066B502 /* WeatherTests.swift */; };
 		37A8101322C4F2A00002EA45 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A8101222C4F2A00002EA45 /* WeatherDetailsViewController.swift */; };
 		37A8101522C4F69D0002EA45 /* humidityRatioIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A8101422C4F69D0002EA45 /* humidityRatioIcon.png */; };
@@ -58,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		24BC28DF61B525821CC5106E /* Pods-LeBonTemps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBonTemps.debug.xcconfig"; path = "Target Support Files/Pods-LeBonTemps/Pods-LeBonTemps.debug.xcconfig"; sourceTree = "<group>"; };
+		3714DAC522C5848300F666F7 /* temperatureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperatureIcon.png; sourceTree = "<group>"; };
 		3715C8C422C4A869008127BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3715C8C622C4AC03008127BC /* NetworkDataCachingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataCachingPlugin.swift; sourceTree = "<group>"; };
 		3715C8C822C4AD3E008127BC /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		379CAD2522C496280066B502 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		379CAD2722C496400066B502 /* AbstractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractModel.swift; sourceTree = "<group>"; };
 		379CAD2922C49B620066B502 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		379CAD2B22C49D2B0066B502 /* WeathersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersManager.swift; sourceTree = "<group>"; };
 		379CAD2F22C49F650066B502 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		37A8101222C4F2A00002EA45 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		37A8101422C4F69D0002EA45 /* humidityRatioIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = humidityRatioIcon.png; sourceTree = "<group>"; };
@@ -139,6 +139,7 @@
 		3715C8CE22C4EABC008127BC /* Images Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3714DAC522C5848300F666F7 /* temperatureIcon.png */,
 				37F8465F22C54D31008A21A5 /* voyager-1-networkError.jpg */,
 				37F8466122C54FD5008A21A5 /* PMAlertViewImageBG.jpeg */,
 				37B1B92522C5184B0097263B /* sunnyIcon.png */,
@@ -251,7 +252,6 @@
 				379CAD2722C496400066B502 /* AbstractModel.swift */,
 				379CAD2522C496280066B502 /* User.swift */,
 				379CAD2922C49B620066B502 /* Weather.swift */,
-				379CAD2B22C49D2B0066B502 /* WeathersManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -392,6 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3714DAC622C5848300F666F7 /* temperatureIcon.png in Resources */,
 				37B1B92622C5184B0097263B /* sunnyIcon.png in Resources */,
 				37A8101522C4F69D0002EA45 /* humidityRatioIcon.png in Resources */,
 				37F8466022C54D31008A21A5 /* voyager-1-networkError.jpg in Resources */,
@@ -517,7 +518,6 @@
 				379CAD2822C496400066B502 /* AbstractModel.swift in Sources */,
 				37A8101322C4F2A00002EA45 /* WeatherDetailsViewController.swift in Sources */,
 				37B1B92422C5077D0097263B /* Connectivity.swift in Sources */,
-				379CAD2C22C49D2B0066B502 /* WeathersManager.swift in Sources */,
 				379CAD1822C487810066B502 /* Constants.swift in Sources */,
 				3715C8C522C4A869008127BC /* HomeViewController.swift in Sources */,
 			);

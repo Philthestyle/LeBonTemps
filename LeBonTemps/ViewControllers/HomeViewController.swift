@@ -352,7 +352,7 @@ class HomeViewController: UIViewController {
     // get data from API if user has wifi or cellular network available
     // ****************************
     private func showAlertViewNetworkErrorPMAlert() {
-        let alertVC = PMAlertController(title: "NETWORK ERROR \n\nTrue or False", description: "Did you know...Space probe 'Voyager 1' distance from Earth is about 21.7 billion km ?", image: UIImage(named: "voyager-1-networkError.jpg"), style: .alert)
+        let alertVC = PMAlertController(title: "NO INTERNET      \n(Offline Mode)", description: "\nMinigame: True or False \n\nSpace probe 'Voyager 1' distance from Earth is about 21.7 billion km ?\n", image: UIImage(named: "voyager-1-networkError.jpg"), style: .alert)
         
         alertVC.gravityDismissAnimation = true
         alertVC.alertMaskBackground.image = UIImage(named: "PMAlertViewImageBG.jpeg")
@@ -364,10 +364,10 @@ class HomeViewController: UIViewController {
         alertVC.alertDescription.font = UIFont(name: "System-Medium", size: CGFloat(24))
         alertVC.alertTitle.font = UIFont(name: "System-Bold", size: CGFloat(28))
     
-        alertVC.addAction(PMAlertAction(title: "True", style: .default, action: { () in
+        alertVC.addAction(PMAlertAction(title: "TRUE", style: .default, action: { () in
             print("I didn't know :)")
         }))
-        alertVC.addAction(PMAlertAction(title: "False", style: .default, action: { () in
+        alertVC.addAction(PMAlertAction(title: "FALSE", style: .default, action: { () in
             print("I already knew that !")
         }))
         
@@ -414,7 +414,6 @@ extension HomeViewController: CLLocationManagerDelegate {
        
         // manage 'offline'/'online' switch cases mode
         // ***************************
-        
         // check if user has any Internet access (wifi of cellular network)
         if Connectivity.isConnectedToInternet() {
             // get data from API and save it into his device with a json file
@@ -424,7 +423,6 @@ extension HomeViewController: CLLocationManagerDelegate {
             // user has NO access to the Internet at all
             if self._userInformations.weathers.isEmpty {
                 // make user aware of the fact that he is using the app ini 'offline mode'
-//                showAlertViewOfflineMode()
                 showAlertViewNetworkErrorPMAlert()
                 
                 // trying to get offline json data (if already exists - if NOT --> 'showAlertViewNetworkError()'...)
@@ -434,8 +432,7 @@ extension HomeViewController: CLLocationManagerDelegate {
                 self.title = "Offline mode"
                 
             } else {
-                // user has NO Internet access && json file Weathers.json'
-//                showAlertViewNetworkError()
+                // user has NO Internet access && json file Weathers.json' not saved
                 showAlertViewNetworkErrorPMAlert()
                 
                 // update 'HomeViewController' 'title' to inform user that he has no Internet access

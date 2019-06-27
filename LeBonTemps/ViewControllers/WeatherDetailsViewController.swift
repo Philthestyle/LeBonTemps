@@ -10,7 +10,6 @@ import UIKit
 
 class WeatherDetailsViewController: UIViewController {
 
-    
     // MARK: - Variables
     // Private variables
     // **************************************************************
@@ -30,7 +29,6 @@ class WeatherDetailsViewController: UIViewController {
 
         updateCurrentWeatherItemData()
         
-        
     }
     
     
@@ -40,8 +38,8 @@ class WeatherDetailsViewController: UIViewController {
     // *****************************
     private func updateCurrentWeatherItemData() {
         if let weatherData = data {
-            temperatureLabel.text = "\(Int(kelvinsToCelcius(kelvinsTemperature: weatherData.temperature.sol)))°C"
-            humidityRatioTextLabel.text? = "\(weatherData.humidite.the2M)%"
+            temperatureLabel.text = "Temperature \n\(Int(kelvinsToCelcius(kelvinsTemperature: weatherData.temperature.sol)))°C"
+            humidityRatioTextLabel.text? = "Humidity \n\(weatherData.humidite.the2M)%"
         }
     }
     

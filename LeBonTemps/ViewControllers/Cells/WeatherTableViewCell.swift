@@ -23,7 +23,7 @@ class WeatherTableViewCell: UITableViewCell {
     var data: Weather? {
         didSet {
             if data == nil {
-                //                textLabel?.text = "fetching data failed, please refresh."
+//                textLabel?.text = "fetching data failed, please refresh."
             } else {
                 guard let weather = data else { DDLogError("Need more informations"); return }
                 let dateFormatter = DateFormatter()
@@ -42,7 +42,6 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     
-    
     // MARK: - Getter & Setter methods
     // **************************************************************
     
@@ -51,10 +50,8 @@ class WeatherTableViewCell: UITableViewCell {
     
     // MARK: - Init behaviors
     // **************************************************************
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     // MARK: - Public methods

@@ -42,7 +42,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27 juin (11:00)" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="HyY-W1-3pt">
                                                                             <rect key="frame" x="25" y="0.0" width="61.5" height="69.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -63,7 +63,7 @@
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtH-VK-jdo">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="60.5" height="69.5"/>
                                                                                     <subviews>
-                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunnyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Yfn-Oy-T5s">
+                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temperatureIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yfn-Oy-T5s">
                                                                                             <rect key="frame" x="10" y="15" width="40" height="40"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="width" constant="40" id="Hvf-cq-pIT"/>
@@ -168,22 +168,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onb-qu-i8q">
-                                <rect key="frame" x="25" y="149" width="364" height="593"/>
+                                <rect key="frame" x="25" y="124" width="364" height="678"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-40" translatesAutoresizingMaskIntoConstraints="NO" id="WwS-lm-kbi">
-                                        <rect key="frame" x="0.0" y="0.0" width="364" height="593"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="678"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lkd-Jo-NhS">
-                                                <rect key="frame" x="0.0" y="0.0" width="364" height="316.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="359"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bch-DU-L5s">
-                                                        <rect key="frame" x="0.0" y="50" width="364" height="216.5"/>
+                                                        <rect key="frame" x="0.0" y="50" width="364" height="259"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYW-JS-B66">
-                                                                <rect key="frame" x="0.0" y="0.0" width="364" height="108.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="364" height="129.5"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunnyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-a3-X9R">
-                                                                        <rect key="frame" x="142" y="14" width="80" height="80"/>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temperatureIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-a3-X9R">
+                                                                        <rect key="frame" x="142" y="25" width="80" height="80"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="aQZ-sG-vIv"/>
                                                                             <constraint firstAttribute="height" constant="80" id="rvR-j6-3MC"/>
@@ -197,11 +197,11 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFZ-J3-YzK">
-                                                                <rect key="frame" x="0.0" y="108.5" width="364" height="108"/>
+                                                                <rect key="frame" x="0.0" y="129.5" width="364" height="129.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2f-u3-MXS">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="108"/>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21C" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2f-u3-MXS">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="129.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                                         <color key="textColor" red="1" green="0.88379020509999995" blue="0.11982792220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -226,16 +226,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4I5-aT-OF2">
-                                                <rect key="frame" x="0.0" y="276.5" width="364" height="316.5"/>
+                                                <rect key="frame" x="0.0" y="319" width="364" height="359"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1JS-9d-dte">
-                                                        <rect key="frame" x="0.0" y="50" width="364" height="216.5"/>
+                                                        <rect key="frame" x="0.0" y="50" width="364" height="259"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUT-rB-I23">
-                                                                <rect key="frame" x="0.0" y="0.0" width="364" height="108.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="364" height="129.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidityRatioIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3v0-wf-XMf">
-                                                                        <rect key="frame" x="142" y="14" width="80" height="80"/>
+                                                                        <rect key="frame" x="142" y="25" width="80" height="80"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="lQP-Jc-Hrn"/>
                                                                             <constraint firstAttribute="height" constant="80" id="yKe-kK-DOR"/>
@@ -249,11 +249,11 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoZ-Op-Hhu">
-                                                                <rect key="frame" x="0.0" y="108.5" width="364" height="108"/>
+                                                                <rect key="frame" x="0.0" y="129.5" width="364" height="129.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yn-ct-VA1">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="108"/>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yn-ct-VA1">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="129.5"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -323,8 +323,8 @@
                             <constraint firstItem="uyD-6T-qpo" firstAttribute="trailing" secondItem="IJh-gR-3U6" secondAttribute="trailing" constant="35" id="PaH-9G-CqG"/>
                             <constraint firstItem="onb-qu-i8q" firstAttribute="leading" secondItem="uyD-6T-qpo" secondAttribute="leading" constant="25" id="jTH-oE-7Or"/>
                             <constraint firstItem="IJh-gR-3U6" firstAttribute="top" secondItem="uyD-6T-qpo" secondAttribute="top" constant="35" id="jyx-dI-Iq0"/>
-                            <constraint firstItem="onb-qu-i8q" firstAttribute="top" secondItem="IJh-gR-3U6" secondAttribute="bottom" constant="25" id="lMk-m9-FE1"/>
-                            <constraint firstItem="uyD-6T-qpo" firstAttribute="bottom" secondItem="onb-qu-i8q" secondAttribute="bottom" constant="120" id="tF4-LW-gZG"/>
+                            <constraint firstItem="onb-qu-i8q" firstAttribute="top" secondItem="IJh-gR-3U6" secondAttribute="bottom" id="lMk-m9-FE1"/>
+                            <constraint firstItem="uyD-6T-qpo" firstAttribute="bottom" secondItem="onb-qu-i8q" secondAttribute="bottom" constant="60" id="tF4-LW-gZG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uyD-6T-qpo"/>
                     </view>
@@ -359,6 +359,6 @@
     <resources>
         <image name="crossCloseIconWhite" width="512" height="512"/>
         <image name="humidityRatioIcon" width="512" height="512"/>
-        <image name="sunnyIcon" width="512" height="512"/>
+        <image name="temperatureIcon.png" width="204.80000305175781" height="204.80000305175781"/>
     </resources>
 </document>

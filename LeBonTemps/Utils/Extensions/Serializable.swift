@@ -15,7 +15,6 @@ protocol Serializable: Codable {
 
 extension Serializable {
     
-    
     /**
      Method to get a json of the current instance of a Codable variable
      
