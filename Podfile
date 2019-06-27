@@ -6,14 +6,6 @@ target 'LeBonTemps' do
   use_frameworks!
 
   # Pods for LeBonTemps
-  ############# Frameworks & Achitectures #############
-  #
-  # RxSwift is a Swift implementation of Reactive Extensions
-  pod 'RxSwift', '~> 4.4.0'
-  # RxSwift Cocoa extensions
-  pod 'RxCocoa', '~> 4.4.0'
-  
-  
   ############# Network #############
   #
   # Network abstraction layer written in Swift
@@ -22,18 +14,12 @@ target 'LeBonTemps' do
   
   ############# Views #############
   #
-  # A collection of awesome loading animations
-  pod 'NVActivityIndicatorView', '~> 4.4.1'
   # PMAlertController is a great and customizable substitute to UIAlertController
   pod 'PMAlertController', '~> 3.5.0'
-  # Elegant transition library for iOS
-  pod 'Hero', '~> 1.4.0'
-  
+
   
   ############# Tools - Debug #############
   #
-  # KeychainAccess is a simple Swift wrapper for Keychain that works on iOS and OS X.
-  pod 'KeychainAccess', '~> 3.1.2'
   # A fast & simple, yet powerful & flexible logging framework for Mac and iOS.
   pod 'CocoaLumberjack/Swift', '~> 3.5.0'
   
@@ -45,6 +31,8 @@ target 'LeBonTemps' do
     pod 'RxSwift', '~> 4.4.0'
     # RxSwift Cocoa extensions
     pod 'RxCocoa', '~> 4.4.0'
+    
+    pod 'Moya/RxSwift', '~> 12.0.1'
     
     
     ############# Network #############
