@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 // MARK: - Weather
+// **************************************************************
 struct Weather: Codable {
     var date: String?
     // --> as 'Weather' object getting from API has a key -> (e.i.: "2019-06-27 02:00:00" { "temperature": "2m": 295.3 etc... }) for 'temperature' object.
@@ -39,6 +40,7 @@ struct Weather: Codable {
 }
 
 // MARK: - Humidite
+// **************************************************************
 struct Humidite: Codable {
     let the2M: Double
     
@@ -48,11 +50,13 @@ struct Humidite: Codable {
 }
 
 // MARK: - Nebulosite
+// **************************************************************
 struct Nebulosite: Codable {
     let haute, moyenne, basse, totale: Int
 }
 
 // MARK: - Pression
+// **************************************************************
 struct Pression: Codable {
     let niveauDeLaMer: Int
     
@@ -62,6 +66,7 @@ struct Pression: Codable {
 }
 
 // MARK: - Temperature
+// **************************************************************
 struct Temperature: Codable {
     let the2M, sol, the500HPa, the850HPa: Double
     
@@ -74,6 +79,7 @@ struct Temperature: Codable {
 }
 
 // MARK: - Vent
+// **************************************************************
 struct Vent: Codable {
     let the10M: Double
     

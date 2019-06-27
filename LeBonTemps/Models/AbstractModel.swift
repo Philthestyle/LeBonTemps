@@ -12,6 +12,7 @@ class AbstractModel: Codable, Serializable {
     
     // MARK: - Variables
     // Private variables
+    // **************************************************************
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -22,7 +23,7 @@ class AbstractModel: Codable, Serializable {
     var id: String
     
     // MARK: - Getter & Setter methods
-    
+    // **************************************************************
     /**
      Getter to get the name of the current class in String
      */
@@ -46,6 +47,7 @@ class AbstractModel: Codable, Serializable {
     }
     
     // MARK: - Constructors
+    // **************************************************************
     /**
      Method to create an abstract model
      
@@ -98,6 +100,7 @@ class AbstractModel: Codable, Serializable {
     
     
     // MARK: - Public methods
+    // **************************************************************
     
     /**
      Method to get the url of this ressource

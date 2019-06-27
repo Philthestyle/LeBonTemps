@@ -61,6 +61,7 @@ class User: AbstractModel {
     
     
     // MARK: - Init behaviors
+    // **************************************************************
     override func encode(to encoder: Encoder) throws {
         do {
             var container = encoder.container(keyedBy: CodingKeys.self)
@@ -73,6 +74,7 @@ class User: AbstractModel {
     
     
     // MARK: - Public methods
+    // **************************************************************
     public func add(location: Location) {
         _loc.append(location)
     }

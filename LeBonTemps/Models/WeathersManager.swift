@@ -22,7 +22,6 @@ class WeathersManager: NSObject {
     
     open var localWeathersSavedOnDevice: [Weather] {
         let user = User()
-        
         return user.weathers
     }
     
