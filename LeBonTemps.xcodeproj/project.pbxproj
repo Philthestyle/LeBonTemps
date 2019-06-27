@@ -20,6 +20,12 @@
 		379CAD1A22C48B100066B502 /* APINetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD1922C48B100066B502 /* APINetworkTests.swift */; };
 		379CAD1F22C48C4F0066B502 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD1E22C48C4F0066B502 /* Serializable.swift */; };
 		379CAD2122C48C710066B502 /* CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2022C48C710066B502 /* CLLocation.swift */; };
+		379CAD2322C495D10066B502 /* CocoaLumberjackCustomFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2222C495D10066B502 /* CocoaLumberjackCustomFormatter.swift */; };
+		379CAD2622C496280066B502 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2522C496280066B502 /* User.swift */; };
+		379CAD2822C496400066B502 /* AbstractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2722C496400066B502 /* AbstractModel.swift */; };
+		379CAD2A22C49B620066B502 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2922C49B620066B502 /* Weather.swift */; };
+		379CAD2C22C49D2B0066B502 /* WeathersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2B22C49D2B0066B502 /* WeathersManager.swift */; };
+		379CAD3022C49F650066B502 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD2F22C49F650066B502 /* WeatherTests.swift */; };
 		A2982082FE594666D5FE9A6B /* Pods_LeBonTemps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB240C8B152EB1005ED3C1D /* Pods_LeBonTemps.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +66,12 @@
 		379CAD1922C48B100066B502 /* APINetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINetworkTests.swift; sourceTree = "<group>"; };
 		379CAD1E22C48C4F0066B502 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		379CAD2022C48C710066B502 /* CLLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation.swift; sourceTree = "<group>"; };
+		379CAD2222C495D10066B502 /* CocoaLumberjackCustomFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaLumberjackCustomFormatter.swift; sourceTree = "<group>"; };
+		379CAD2522C496280066B502 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		379CAD2722C496400066B502 /* AbstractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractModel.swift; sourceTree = "<group>"; };
+		379CAD2922C49B620066B502 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		379CAD2B22C49D2B0066B502 /* WeathersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersManager.swift; sourceTree = "<group>"; };
+		379CAD2F22C49F650066B502 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		4DB240C8B152EB1005ED3C1D /* Pods_LeBonTemps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeBonTemps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		511FB7B345146D9ABA7B572D /* Pods-LeBonTempsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBonTempsTests.release.xcconfig"; path = "Target Support Files/Pods-LeBonTempsTests/Pods-LeBonTempsTests.release.xcconfig"; sourceTree = "<group>"; };
 		66D8D8CB8BE2354197F18B33 /* Pods-LeBonTemps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBonTemps.release.xcconfig"; path = "Target Support Files/Pods-LeBonTemps/Pods-LeBonTemps.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +131,7 @@
 		372CB88522C4789700118679 /* LeBonTemps */ = {
 			isa = PBXGroup;
 			children = (
+				379CAD2422C496190066B502 /* Models */,
 				379CAD1622C487740066B502 /* Utils */,
 				379CAD1322C486EF0066B502 /* Network */,
 				372CB88622C4789700118679 /* AppDelegate.swift */,
@@ -137,6 +150,7 @@
 				372CB89B22C4789900118679 /* LeBonTempsTests.swift */,
 				372CB89D22C4789900118679 /* Info.plist */,
 				379CAD1922C48B100066B502 /* APINetworkTests.swift */,
+				379CAD2F22C49F650066B502 /* WeatherTests.swift */,
 			);
 			path = LeBonTempsTests;
 			sourceTree = "<group>";
@@ -171,6 +185,7 @@
 		379CAD1C22C48C230066B502 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				379CAD2222C495D10066B502 /* CocoaLumberjackCustomFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -182,6 +197,17 @@
 				379CAD2022C48C710066B502 /* CLLocation.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		379CAD2422C496190066B502 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				379CAD2722C496400066B502 /* AbstractModel.swift */,
+				379CAD2522C496280066B502 /* User.swift */,
+				379CAD2922C49B620066B502 /* Weather.swift */,
+				379CAD2B22C49D2B0066B502 /* WeathersManager.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		752F4F4ABE4814D010815C50 /* Pods */ = {
@@ -424,7 +450,12 @@
 				379CAD1F22C48C4F0066B502 /* Serializable.swift in Sources */,
 				379CAD1522C486FD0066B502 /* WeatherService.swift in Sources */,
 				379CAD2122C48C710066B502 /* CLLocation.swift in Sources */,
+				379CAD2A22C49B620066B502 /* Weather.swift in Sources */,
+				379CAD2622C496280066B502 /* User.swift in Sources */,
 				372CB88722C4789700118679 /* AppDelegate.swift in Sources */,
+				379CAD2322C495D10066B502 /* CocoaLumberjackCustomFormatter.swift in Sources */,
+				379CAD2822C496400066B502 /* AbstractModel.swift in Sources */,
+				379CAD2C22C49D2B0066B502 /* WeathersManager.swift in Sources */,
 				379CAD1822C487810066B502 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +466,7 @@
 			files = (
 				372CB89C22C4789900118679 /* LeBonTempsTests.swift in Sources */,
 				379CAD1A22C48B100066B502 /* APINetworkTests.swift in Sources */,
+				379CAD3022C49F650066B502 /* WeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
