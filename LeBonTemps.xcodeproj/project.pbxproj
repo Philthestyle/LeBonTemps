@@ -12,6 +12,7 @@
 		3715C8C722C4AC03008127BC /* NetworkDataCachingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C622C4AC03008127BC /* NetworkDataCachingPlugin.swift */; };
 		3715C8C922C4AD3E008127BC /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C822C4AD3E008127BC /* WeatherTableViewCell.swift */; };
 		3715C8CB22C4DABA008127BC /* APIDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8CA22C4DABA008127BC /* APIDataTests.swift */; };
+		3715C8D022C4EAD5008127BC /* sunnyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3715C8CF22C4EAD5008127BC /* sunnyIcon.png */; };
 		372CB88722C4789700118679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372CB88622C4789700118679 /* AppDelegate.swift */; };
 		372CB88922C4789700118679 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372CB88822C4789700118679 /* ViewController.swift */; };
 		372CB88C22C4789700118679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372CB88A22C4789700118679 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		3715C8C622C4AC03008127BC /* NetworkDataCachingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataCachingPlugin.swift; sourceTree = "<group>"; };
 		3715C8C822C4AD3E008127BC /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		3715C8CA22C4DABA008127BC /* APIDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataTests.swift; sourceTree = "<group>"; };
+		3715C8CF22C4EAD5008127BC /* sunnyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunnyIcon.png; sourceTree = "<group>"; };
 		372CB88322C4789700118679 /* LeBonTemps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBonTemps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372CB88622C4789700118679 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		372CB88822C4789700118679 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		3715C8CE22C4EABC008127BC /* Images Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3715C8CF22C4EAD5008127BC /* sunnyIcon.png */,
+			);
+			path = "Images Assets";
+			sourceTree = "<group>";
+		};
 		372CB87A22C4789700118679 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 		372CB88522C4789700118679 /* LeBonTemps */ = {
 			isa = PBXGroup;
 			children = (
+				3715C8CE22C4EABC008127BC /* Images Assets */,
 				3715C8C322C4A83B008127BC /* ViewControllers */,
 				379CAD2422C496190066B502 /* Models */,
 				379CAD1622C487740066B502 /* Utils */,
@@ -360,6 +371,7 @@
 			files = (
 				372CB89122C4789900118679 /* LaunchScreen.storyboard in Resources */,
 				372CB88E22C4789900118679 /* Assets.xcassets in Resources */,
+				3715C8D022C4EAD5008127BC /* sunnyIcon.png in Resources */,
 				372CB88C22C4789700118679 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
