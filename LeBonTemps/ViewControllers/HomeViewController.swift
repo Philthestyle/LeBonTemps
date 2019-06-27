@@ -14,6 +14,7 @@ import CocoaLumberjack
 import CoreLocation
 import Moya
 import RxSwift
+import PMAlertController
 
 
 class HomeViewController: UIViewController {
@@ -30,6 +31,7 @@ class HomeViewController: UIViewController {
     private var _provider: MoyaProvider<WeatherService>! // network
     private let _refreshControl = UIRefreshControl() // tableView refresh control
     
+    private let _offlineJsonFileName: String = "Weathers.json"
     
     // Public variables
     // **************************************************************
@@ -55,13 +57,40 @@ class HomeViewController: UIViewController {
         _determineMyCurrentLocation()
         
         
+        
+        
+    }
+    
+    
+    // MARK: - Init behaviors
+    // **************************************************************
+    
+    
+    
+    
+    // Set 'statusBarStyle' to '.light' appearance
+    // ***************************
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
         // Custom UI && Design
         initTableViewDesign()
         
         // NavigationBar custom design
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1791211892, green: 0.4747553867, blue: 1, alpha: 1)
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)]
+        self.setNeedsStatusBarAppearanceUpdate()
+        self.initDesignViewController()
         
+        
+    }
+    
+    // set preferredStatusBarStyle to .lightContent style
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
     }
     
     
@@ -77,6 +106,10 @@ class HomeViewController: UIViewController {
             DDLogError("Warning! You don't have enough data to load detail of weather for your current location")
             return
         }
+        
+        // A) 1. update 'HomeViewController' title with 'city' name and 'country' name of user's current location (latitude & longitude)
+        self.updateCityCountryCurrentLocationData()
+        
         // B) API request with Moya using 'lat' && 'long' (Tests ref. --> APIDataTests.swift)
         _provider.request(.currentLocationWeathers(lat: Int(lat), long: Int(long))) { event in
             switch event {
@@ -87,23 +120,27 @@ class HomeViewController: UIViewController {
                     var weathers = [Weather]()
                     for item in json {
                         print("----> K: \(item.key) => \n\(item.value)\n\n")
-                        // B) 1) try to encode data in NSData for only Json => [String: Any]
+                    // B) 1. try to encode data in NSData for only Json => [String: Any]
                         if let value = item.value as? [String: Any],
                             let jsonData = try? JSONSerialization.data(withJSONObject: value),
                             var typedValue = AbstractModel.decodeTypedObject(type: Weather.self, data: jsonData) {
                             print("typedValue: \(typedValue)")
                             typedValue.date = item.key
+                            // fill weathers array with each weather item from API after JSONSerialization
                             weathers.append(typedValue)
                         } else {
                             print("error - encoding data in NSData has failed")
                         }
                     }
-                    // B) 2) sort 'weathers' array by 'date'
+                    // B) 2. sort 'weathers' array by 'date'
                     let sortedWeathers = weathers.sorted { $0.date! < $1.date! }
                     self._userInformations.weathers = sortedWeathers
                     
-                    // B) 3) TO DO:
-                    // try to save 'response.data' (that has just been parsed to json format and sorted to local user's mobile folders so it will be available offline even if he kills 'LeBonTemps' and come back later without any Internet access (no wifi, no cellular data).)
+                    // B) 3. save user's weathers's list with a json file locally into device
+                    self.saveToJsonFile(weathersArray: sortedWeathers)
+                    
+                    // B) 4. retrieve json file from device and update weathersTableView with its data
+//                    self.retrieveFromJsonFile()
                     
                 } catch let error {
                     print("error: \(error)")
@@ -177,6 +214,185 @@ class HomeViewController: UIViewController {
     private func initTableViewDesign() {
         weathersTableView.backgroundColor = #colorLiteral(red: 0.1791211892, green: 0.4747553867, blue: 1, alpha: 1)
     }
+    
+    private func initDesignViewController() {
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1791211892, green: 0.4747553867, blue: 1, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
+        ]
+    }
+    
+    // save json data from given 'Weather' array (after API response has been serialized with typedValue = AbstractModel.decodeTypedObject(type: Weather.self, data: jsonData))
+    // ****************************
+    private func saveToJsonFile(weathersArray: [Weather]) {
+        // Get the url of Persons.json in document directory
+        guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let fileUrl = documentDirectoryUrl.appendingPathComponent(_offlineJsonFileName)
+        
+        let weathersArray = weathersArray
+        
+        // Transform array into data and save it into file
+        do {
+            let jsonEncoder = JSONEncoder()
+            let jsonData = try jsonEncoder.encode(weathersArray)
+            try jsonData.write(to: fileUrl, options: [])
+            print("Weathers array data: \(jsonData)")
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            print(jsonString!)
+        } catch {
+            print(error)
+        }
+    }
+    
+    
+    // retrieve json file and decode it from [Weather].self and update user's weathers list with this data
+    // ****************************
+    func retrieveFromJsonFile() {
+        // Get the url of Persons.json in document directory
+        guard let documentsDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return
+        }
+        let fileUrl = documentsDirectoryUrl.appendingPathComponent(_offlineJsonFileName)
+        // Read data from .json file and transform data into an array
+        
+        if !(fileExist(path: fileUrl.path)) {
+            print("File Does Not Exist...")
+            return
+        }  else {
+            let jsonDecoder = JSONDecoder()
+            let data = try! Data(contentsOf: fileUrl, options: [])
+            let weathersArray = try! jsonDecoder.decode([Weather].self, from: data)
+            self._userInformations.weathers = weathersArray
+            print(self._userInformations.weathers)
+            self.weathersTableView.reloadData()
+        }
+        
+    }
+    
+    
+     // check if json local file is available and exists - if available, return 'true', else, 'false'
+     // ****************************
+     func fileExist(fileNameWithExtention: String) -> Bool {
+        var fileExist: Bool = false
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+
+        let url = NSURL(fileURLWithPath: path)
+
+         // Read data from .json file to observe it and conclude if it exists or not
+        if let pathComponent = url.appendingPathComponent(fileNameWithExtention) {
+            let filePath = pathComponent.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: filePath) {
+                print("File available")
+                print("File 'size':\(fileNameWithExtention) --> \(fileManager.contents(atPath: filePath)!)")
+                fileExist = true
+            } else {
+                print("File NOT available")
+                fileExist = false
+            }
+        } else {
+            print("File path NOT available")
+            fileExist = false
+        }
+        return fileExist
+    }
+    
+    func fileExist(path: String) -> Bool {
+        var isDirectory: ObjCBool = false
+        let fm = FileManager.default
+        return (fm.fileExists(atPath: path, isDirectory: &isDirectory))
+    }
+    
+    
+    
+    // get 'city' and 'country' data  by reversedGeocoding Location from users' 'currentLocation'
+    // ****************************
+    private func fetchCityAndCountry(from location: CLLocation, completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            completion(placemarks?.first?.locality,
+                       placemarks?.first?.country,
+                       error)
+        }
+    }
+    
+    // convert
+    // ****************************
+    private func updateCityCountryCurrentLocationData() {
+        // Updating 'city' && 'country' NavigationBar Title
+        self.fetchCityAndCountry(from: self._userInformations.locationCLLoation) { city, country, error in
+            var cityName: String = ""
+            var countryName: String = ""
+            guard let city = city, let country = country, error == nil else { return }
+            cityName = city
+            countryName = country
+            print(city + ", " + country)  // e.i. Rio de Janeiro, Brazil
+            
+            self.updateNavigationControllerTitle(city: city, country: countryName)
+            
+            print(cityName)
+        }
+    }
+    
+    // update viewController 'title' with 'city' name and 'country' name
+    // ****************************
+    private func updateNavigationControllerTitle(city: String, country: String) {
+        self.title = "\(city + ", " + country.uppercased())"
+    }
+    
+    // get data if user is offline (wifi or cellular network)
+    // ****************************
+    private func getDataOfflineMode(fileNameWithExtension: String) {
+        if fileExist(fileNameWithExtention: fileNameWithExtension) {
+            print("File exists !!! :)")
+            
+            // retieve json and update '_userInformations.weathers'
+            self.retrieveFromJsonFile()
+        } else {
+            print("Network error. Please check your Internet connection")
+            
+            
+        }
+//        // check if file ('Weathers.json' exists locally into user's device)
+//        if fileExist(path: "Weathers.json") {
+//            print("File exists !!! :)")
+//            // retieve json and update '_userInformations.weathers'
+//            self.retrieveFromJsonFile()
+//        } else {
+//            print("Network error. Please check your Internet connection")
+//            // user has no json file saved locally into his device
+//            print("Weathers.json doesn't exists into device")
+//        }
+    }
+    
+    
+    // get data from API if user has wifi or cellular network available
+    // ****************************
+    private func getDataOnlineMode(userInformations: User) {
+        // no need to check if json file is already saved in device, because we will update it and save it from the next method '_getCurrentLocationWeathersData'
+        self._getCurrentLocationWeathersData()
+    }
+    
+    
+    // get data from API if user has wifi or cellular network available
+    // ****************************
+    private func showAlertViewNetworkError() {
+        let alertController = UIAlertController(title: "Network error", message:
+            "Please check your Internet connection and refresh.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+
+    // get data from API if user has wifi or cellular network available
+    // ****************************
+    private func showAlertViewOfflineMode() {
+        let alertController = UIAlertController(title: "Offline mode", message:
+            "You are currently using our app in 'offline mode'. Please connect to the Internet to get steady updates.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "I understand", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
+    }
 
 }
 
@@ -196,7 +412,36 @@ extension HomeViewController: CLLocationManagerDelegate {
         let location = Location(location: userLocation)
         _userInformations.currentLocation = location
        
-        // TO DO --> update '_userInformations.weathers' using user's current Location (_userInformations.currentLocation)
+        // manage 'offline'/'online' switch cases mode
+        // ***************************
+        
+        // check if user has any Internet access (wifi of cellular network)
+        if Connectivity.isConnectedToInternet() {
+            // get data from API and save it into his device with a json file
+            self._getCurrentLocationWeathersData()
+            
+        } else {
+            // user has NO access to the Internet at all
+            if self._userInformations.weathers.isEmpty {
+                // make user aware of the fact that he is using the app ini 'offline mode'
+                showAlertViewOfflineMode()
+                
+                // trying to get offline json data (if already exists - if NOT --> 'showAlertViewNetworkError()'...)
+                getDataOfflineMode(fileNameWithExtension: _offlineJsonFileName)
+                
+                // update 'HomeViewController' 'title' to inform user that he has no Internet access
+                self.title = "Offline mode"
+                
+            } else {
+                // user has NO Internet access && json file Weathers.json'
+                showAlertViewNetworkError()
+                
+                // update 'HomeViewController' 'title' to inform user that he has no Internet access
+                self.title = "Network unavailable"
+            }
+        }
+        
+        // get data from API, save serialized values, save json locally, and retrieve json values to update weathersTableView
         _getCurrentLocationWeathersData()
     }
     
@@ -231,7 +476,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 70
     }
     
-    //cell selection action ('data' && 'navigation' management prepared for the destination controller) -> 'WeatherDetailsViewController'
+    // cell selection action ('data' && 'navigation' management prepared for the destination controller) -> 'WeatherDetailsViewController'
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "weatherDetailsVC") as? WeatherDetailsViewController else {
             DDLogError("Can't find 'WeatherDetailsViewController'")
@@ -242,5 +487,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         detailVC.data = currentWeatherItem
         
         self.navigationController?.present(detailVC, animated: true, completion: nil)
+        
+        // deselect cell in order to avoid having to tap twice to select cell
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
