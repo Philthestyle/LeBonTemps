@@ -56,6 +56,7 @@ class HomeViewController: UIViewController {
         
         
         // Custom UI && Design
+        initTableViewDesign()
         
         // NavigationBar custom design
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1791211892, green: 0.4747553867, blue: 1, alpha: 1)
@@ -171,8 +172,11 @@ class HomeViewController: UIViewController {
         self._refreshControl.endRefreshing()
     }
     
-    
-    
+    // weathersTableView custom design
+    // ***************************
+    private func initTableViewDesign() {
+        weathersTableView.backgroundColor = #colorLiteral(red: 0.1791211892, green: 0.4747553867, blue: 1, alpha: 1)
+    }
 
 }
 
@@ -193,7 +197,7 @@ extension HomeViewController: CLLocationManagerDelegate {
         _userInformations.currentLocation = location
        
         // TO DO --> update '_userInformations.weathers' using user's current Location (_userInformations.currentLocation)
-        
+        _getCurrentLocationWeathersData()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -209,12 +213,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return _userInformations.weathers.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = weathersTableView.dequeueReusableCell(withIdentifier: "customWeatherCell", for: indexPath) as! WeatherTableViewCell
+        guard let currentData = _userInformations?.weathers[indexPath.row] else {
+            return tableView.dequeueReusableCell(withIdentifier: _defaultCellIdentifier, for: indexPath)
+        }
         
-        cell.dateTextLabel.text? = "Date Label"
-        cell.temperatureTextLabel.text? = "Temperature label"
-        
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: _weatherCellIdentifier, for: indexPath) as? WeatherTableViewCell {
+            cell.data = currentData
+            cell.backgroundColor = #colorLiteral(red: 0.1791211892, green: 0.4747553867, blue: 1, alpha: 1)
+            return cell
+        }
+        // manage my cell with the default behavior
+        return tableView.dequeueReusableCell(withIdentifier: _defaultCellIdentifier, for: indexPath)
     }
     
     // cell 'height' management
