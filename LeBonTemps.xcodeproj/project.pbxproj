@@ -12,7 +12,6 @@
 		3715C8C722C4AC03008127BC /* NetworkDataCachingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C622C4AC03008127BC /* NetworkDataCachingPlugin.swift */; };
 		3715C8C922C4AD3E008127BC /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8C822C4AD3E008127BC /* WeatherTableViewCell.swift */; };
 		3715C8CB22C4DABA008127BC /* APIDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715C8CA22C4DABA008127BC /* APIDataTests.swift */; };
-		3715C8D022C4EAD5008127BC /* sunnyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3715C8CF22C4EAD5008127BC /* sunnyIcon.png */; };
 		372CB88722C4789700118679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372CB88622C4789700118679 /* AppDelegate.swift */; };
 		372CB88922C4789700118679 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372CB88822C4789700118679 /* ViewController.swift */; };
 		372CB88C22C4789700118679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372CB88A22C4789700118679 /* Main.storyboard */; };
@@ -34,6 +33,8 @@
 		37A8101322C4F2A00002EA45 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A8101222C4F2A00002EA45 /* WeatherDetailsViewController.swift */; };
 		37A8101522C4F69D0002EA45 /* humidityRatioIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A8101422C4F69D0002EA45 /* humidityRatioIcon.png */; };
 		37A8101722C4F7520002EA45 /* crossCloseIconWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A8101622C4F7520002EA45 /* crossCloseIconWhite.png */; };
+		37B1B92422C5077D0097263B /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B1B92322C5077D0097263B /* Connectivity.swift */; };
+		37B1B92622C5184B0097263B /* sunnyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37B1B92522C5184B0097263B /* sunnyIcon.png */; };
 		A2982082FE594666D5FE9A6B /* Pods_LeBonTemps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB240C8B152EB1005ED3C1D /* Pods_LeBonTemps.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +61,6 @@
 		3715C8C622C4AC03008127BC /* NetworkDataCachingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataCachingPlugin.swift; sourceTree = "<group>"; };
 		3715C8C822C4AD3E008127BC /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		3715C8CA22C4DABA008127BC /* APIDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataTests.swift; sourceTree = "<group>"; };
-		3715C8CF22C4EAD5008127BC /* sunnyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunnyIcon.png; sourceTree = "<group>"; };
 		372CB88322C4789700118679 /* LeBonTemps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBonTemps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372CB88622C4789700118679 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		372CB88822C4789700118679 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +88,8 @@
 		37A8101222C4F2A00002EA45 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		37A8101422C4F69D0002EA45 /* humidityRatioIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = humidityRatioIcon.png; sourceTree = "<group>"; };
 		37A8101622C4F7520002EA45 /* crossCloseIconWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crossCloseIconWhite.png; sourceTree = "<group>"; };
+		37B1B92322C5077D0097263B /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		37B1B92522C5184B0097263B /* sunnyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunnyIcon.png; sourceTree = "<group>"; };
 		4DB240C8B152EB1005ED3C1D /* Pods_LeBonTemps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeBonTemps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		511FB7B345146D9ABA7B572D /* Pods-LeBonTempsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBonTempsTests.release.xcconfig"; path = "Target Support Files/Pods-LeBonTempsTests/Pods-LeBonTempsTests.release.xcconfig"; sourceTree = "<group>"; };
 		66D8D8CB8BE2354197F18B33 /* Pods-LeBonTemps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBonTemps.release.xcconfig"; path = "Target Support Files/Pods-LeBonTemps/Pods-LeBonTemps.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,7 +137,7 @@
 		3715C8CE22C4EABC008127BC /* Images Assets */ = {
 			isa = PBXGroup;
 			children = (
-				3715C8CF22C4EAD5008127BC /* sunnyIcon.png */,
+				37B1B92522C5184B0097263B /* sunnyIcon.png */,
 				37A8101422C4F69D0002EA45 /* humidityRatioIcon.png */,
 				37A8101622C4F7520002EA45 /* crossCloseIconWhite.png */,
 			);
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				379CAD2222C495D10066B502 /* CocoaLumberjackCustomFormatter.swift */,
+				37B1B92322C5077D0097263B /* Connectivity.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -386,10 +389,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B1B92622C5184B0097263B /* sunnyIcon.png in Resources */,
 				37A8101522C4F69D0002EA45 /* humidityRatioIcon.png in Resources */,
 				372CB89122C4789900118679 /* LaunchScreen.storyboard in Resources */,
 				372CB88E22C4789900118679 /* Assets.xcassets in Resources */,
-				3715C8D022C4EAD5008127BC /* sunnyIcon.png in Resources */,
 				37A8101722C4F7520002EA45 /* crossCloseIconWhite.png in Resources */,
 				372CB88C22C4789700118679 /* Main.storyboard in Resources */,
 			);
@@ -509,6 +512,7 @@
 				379CAD2322C495D10066B502 /* CocoaLumberjackCustomFormatter.swift in Sources */,
 				379CAD2822C496400066B502 /* AbstractModel.swift in Sources */,
 				37A8101322C4F2A00002EA45 /* WeatherDetailsViewController.swift in Sources */,
+				37B1B92422C5077D0097263B /* Connectivity.swift in Sources */,
 				379CAD2C22C49D2B0066B502 /* WeathersManager.swift in Sources */,
 				379CAD1822C487810066B502 /* Constants.swift in Sources */,
 				3715C8C522C4A869008127BC /* HomeViewController.swift in Sources */,
