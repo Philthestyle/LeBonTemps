@@ -74,13 +74,6 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>Pods-LeBonTempsUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
 		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>

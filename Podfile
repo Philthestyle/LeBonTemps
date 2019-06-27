@@ -6,8 +6,6 @@ target 'LeBonTemps' do
   use_frameworks!
 
   # Pods for LeBonTemps
-  
-  
   ############# Frameworks & Achitectures #############
   #
   # RxSwift is a Swift implementation of Reactive Extensions
@@ -43,11 +41,18 @@ target 'LeBonTemps' do
   target 'LeBonTempsTests' do
     inherit! :search_paths
     # Pods for testing
+    # RxSwift is a Swift implementation of Reactive Extensions
+    pod 'RxSwift', '~> 4.4.0'
+    # RxSwift Cocoa extensions
+    pod 'RxCocoa', '~> 4.4.0'
+    
+    
+    ############# Network #############
+    #
+    # Network abstraction layer written in Swift
+    pod 'Moya/RxSwift', '~> 12.0.1'
   end
 
-  target 'LeBonTempsUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  
 
 end

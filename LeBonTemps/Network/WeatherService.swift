@@ -68,15 +68,6 @@ extension WeatherService: TargetType {
         return ["Content-type": "application/json"]
     }
     
-//    public func clearCache(urlRequests: [URLRequest] = []) {
-//        let provider = MoyaProvider<WeatherService>()
-//        guard let urlCache = provider.manager.session.configuration.urlCache else { return }
-//        if urlRequests.isEmpty {
-//            urlCache.removeAllCachedResponses()
-//        } else {
-//            urlRequests.forEach { urlCache.removeCachedResponse(for: $0) }
-//        }
-//    }
     
     private func _getLocalJson(name:String!) -> Data! {
         // TO DO
