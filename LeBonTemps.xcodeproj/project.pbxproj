@@ -15,6 +15,8 @@
 		372CB89122C4789900118679 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372CB88F22C4789900118679 /* LaunchScreen.storyboard */; };
 		372CB89C22C4789900118679 /* LeBonTempsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372CB89B22C4789900118679 /* LeBonTempsTests.swift */; };
 		372CB8A722C4789900118679 /* LeBonTempsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372CB8A622C4789900118679 /* LeBonTempsUITests.swift */; };
+		379CAD1522C486FD0066B502 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD1422C486FD0066B502 /* WeatherService.swift */; };
+		379CAD1822C487810066B502 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CAD1722C487810066B502 /* Constants.swift */; };
 		39E545B9C9D68AE627EA13F6 /* Pods_LeBonTempsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C154E5D72833B356B63F6E2A /* Pods_LeBonTempsTests.framework */; };
 		C1F30346550AB27AAE8B8ECD /* Pods_LeBonTempsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9357EB37E025D080BAE7FC47 /* Pods_LeBonTempsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		372CB8A222C4789900118679 /* LeBonTempsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBonTempsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		372CB8A622C4789900118679 /* LeBonTempsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBonTempsUITests.swift; sourceTree = "<group>"; };
 		372CB8A822C4789900118679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		379CAD1422C486FD0066B502 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		379CAD1722C487810066B502 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4F965DC2467A32DFC6CBA0E4 /* Pods-LeBonTempsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBonTempsUITests.release.xcconfig"; path = "Target Support Files/Pods-LeBonTempsUITests/Pods-LeBonTempsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		719ADDAB849132E8B003214C /* Pods-LeBonTemps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeBonTemps.debug.xcconfig"; path = "Target Support Files/Pods-LeBonTemps/Pods-LeBonTemps.debug.xcconfig"; sourceTree = "<group>"; };
 		87C7BD8B432B0C57E5E5933E /* Pods_LeBonTemps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeBonTemps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +118,8 @@
 		372CB88522C4789700118679 /* LeBonTemps */ = {
 			isa = PBXGroup;
 			children = (
+				379CAD1622C487740066B502 /* Utils */,
+				379CAD1322C486EF0066B502 /* Network */,
 				372CB88622C4789700118679 /* AppDelegate.swift */,
 				372CB88822C4789700118679 /* ViewController.swift */,
 				372CB88A22C4789700118679 /* Main.storyboard */,
@@ -140,6 +146,22 @@
 				372CB8A822C4789900118679 /* Info.plist */,
 			);
 			path = LeBonTempsUITests;
+			sourceTree = "<group>";
+		};
+		379CAD1322C486EF0066B502 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				379CAD1422C486FD0066B502 /* WeatherService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		379CAD1622C487740066B502 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				379CAD1722C487810066B502 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		752F4F4ABE4814D010815C50 /* Pods */ = {
@@ -387,7 +409,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				372CB88922C4789700118679 /* ViewController.swift in Sources */,
+				379CAD1522C486FD0066B502 /* WeatherService.swift in Sources */,
 				372CB88722C4789700118679 /* AppDelegate.swift in Sources */,
+				379CAD1822C487810066B502 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
