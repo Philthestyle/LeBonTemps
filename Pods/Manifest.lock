@@ -1,0 +1,50 @@
+PODS:
+  - Alamofire (4.8.2)
+  - CocoaLumberjack/Core (3.5.3)
+  - CocoaLumberjack/Swift (3.5.3):
+    - CocoaLumberjack/Core
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - Moya/RxSwift (12.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - PMAlertController (3.5.0)
+  - Result (4.1.0)
+  - RxAtomic (4.4.2)
+  - RxCocoa (4.4.2):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
+
+DEPENDENCIES:
+  - CocoaLumberjack/Swift (~> 3.5.0)
+  - Moya/RxSwift (~> 12.0.1)
+  - PMAlertController (~> 3.5.0)
+  - RxCocoa (~> 4.4.0)
+  - RxSwift (~> 4.4.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CocoaLumberjack
+    - Moya
+    - PMAlertController
+    - Result
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  PMAlertController: 06dab8160066fc4ce991c880e3722cd403e2926a
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
+
+PODFILE CHECKSUM: f3cea054ce35ef4e6fa20fd4857827af5a9315b9
+
+COCOAPODS: 1.7.1
